@@ -19,7 +19,7 @@
 	"extra": {
     "laravel": {
         "providers": [
-            "hoalzein\\Prof4Net\\HtmlServiceProvider"
+            "hoalzein\\Prof4Net\\Html\\HtmlServiceProvider"
         ]
     }
 }
