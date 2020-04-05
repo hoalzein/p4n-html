@@ -1,0 +1,11 @@
+<a 
+    class="<?= $this->class ?>" 
+    name="<?= $this->name ?>"
+    value="<?= $this->value ?>"
+    data-on-document-ready="formRequest"
+    <?= $this->customAttr ?>
+>
+<? foreach ($this->getElements() as $ele ) { ?>
+    <?= $ele->getHtml(); ?>
+<? } ?>
+</a>

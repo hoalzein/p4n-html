@@ -1,0 +1,124 @@
+
+#index #menu_suche.header-search-wrapper a#mobile_search_icon_close {
+    display:none;
+}
+
+
+
+@media only screen and (min-width: 993px)
+{
+    .hide-on-large-and-up {
+        display:none !important;
+    }
+}
+@media only screen and (min-width: 993px)
+{
+    .show-on-large-and-up {
+        display:block !important;
+    }
+}
+@media only screen and (max-width: 992px)
+{
+    .hide-on-medium-and-down {
+        display:none !important;
+    }
+}
+
+@media only screen and (max-width: 992px)
+{
+    .sidenav-main .brand-sidebar .navbar-toggler
+    {
+        display: none;
+    }
+    .sidenav-main .brand-sidebar span.logo-text {
+        display:none !important;
+    }
+    .sidenav-main .brand-sidebar .brand-logo
+    {
+        left: 48px;
+    }
+    .sidenav-main .brand-sidebar
+    {
+        background: transparent !important;
+
+    }
+    .sidenav-main {
+        width: auto;
+        height: 0;
+    }
+    .sidenav-main .sidenav {
+        top:0px;
+        transform: translateX(-105%);
+        width:216px;
+        background:#4B4B4B;
+        height: 100%;
+        transition: transform 0.25s ease !important;
+    }
+    
+    .sidenav-overlay
+    {
+        z-index: 995;
+    }
+    
+    
+    #index #menu_suche.header-search-wrapper a#mobile_search_icon_close {
+    display:block;
+}
+
+
+   
+    #index .header-controls .styled-select:not(.icon-select) {
+        width: 112px;
+    }
+
+    
+
+    .sidenav-main-locked div[name="menu"], .sidenav-main-locked .frameclass, .sidenav-main-locked div[name="tabs"] {
+        padding-left:8px;
+    }
+    div[name="tabs"] {
+        display:none;
+        height:0px;
+    }
+
+
+    #index .header-search-wrapper {
+
+        float:none;
+        width:100%;
+        position:fixed;
+        top:56px;
+        -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .12), 0 1px 5px 0 rgba(0, 0, 0, .2);
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .12), 0 1px 5px 0 rgba(0, 0, 0, .2);
+        background:#fff;
+        margin:0px;
+        color:#000;
+        padding-top:8px;
+        padding-bottom:8px;
+        height:56px;
+    }
+    #index .header-controls label {
+        color:#000;
+    }
+    #index .header-controls .icon-select .styled-select > i {
+        color:#000;
+    }
+    #index .header-search-wrapper #search.group input {
+        color:#000;
+    }
+    #index #menu_suche.header-search-wrapper  {
+        display:none;
+    }
+    
+    #index .header-search-wrapper #search.group {
+        width:calc(100% - 80px);
+    }
+
+}
+@media only screen and (min-width: 993px)
+{
+    .sidenav-trigger
+    {
+        display: none !important;
+    }
+}

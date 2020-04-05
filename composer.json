@@ -1,0 +1,19 @@
+{
+    "name": "hoalzein/p4n-html",
+    "description": "A laravel wrapper for Prof4Net html elements.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "hoalzein",
+            "email": "hashim.omar.zein@hotmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "hoalzein\\Prof4Net\\Html\\": "src/"
+        }
+    }
+}

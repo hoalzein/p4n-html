@@ -1,0 +1,15 @@
+<span 
+    class="<?= $this->wrapper_class ?> styled-select" 
+    data-on-document-ready="select_js_all<?=($this->customEvent!=''?$this->customEvent:'')?>"
+    >
+    <select class="modern_select select-js select-js-all<?= $this->class ?>" name="<?= $this->name ?>"  <?= $this->customAttr ?>>
+        <? foreach ($this->options as $key => $value) { ?>
+        <option <?= (in_array($key, $this->selected)?' selected="selected"':'') ?> value="<?= $key ?>"><?= $value ?></option>
+        <? } ?>
+    </select>
+    <i class="material-icons">keyboard_arrow_down</i>
+    <label><? foreach ($this->getElements() as $obj) { ?>
+            <?= $obj->getHtml(); ?>
+        <? } ?>
+        <?= ($this->required==true?' *':'') ?></label>
+</span>

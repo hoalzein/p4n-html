@@ -1,0 +1,41 @@
+
+#main_template_progressbar.template_progressbar {
+    position:fixed;
+    top:56px;
+    height:5px;
+    width:100%;
+    z-index:1000;
+    display:block;
+    left:56px;
+    width: (100% - 56px);
+}
+
+#main_template_progressbar.template_progressbar div:first-child {
+    position:relative;
+    top:0px;
+    height:3px;
+    width:0%;
+    display:block;
+    background:rgba(161,191,30,1);
+    -webkit-transition : width 1s linear;
+    -moz-transition : width 1s linear;
+    -o-transition : width linear;
+    transition : width 1s linear;
+
+}
+
+
+#singlesite #main_template_progressbar.template_progressbar {
+    top:0px !important;
+    left:0px !important;
+}
+#singlesite .sidenav-main-locked #main_template_progressbar.template_progressbar {
+    left:0px !important;
+    top:0px !important;
+}
+
+
+.sidenav-main-locked #main_template_progressbar.template_progressbar {
+    left: 232px;
+    width: (100% - 232px);
+}

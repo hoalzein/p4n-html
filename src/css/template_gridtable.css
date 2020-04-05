@@ -1,0 +1,38 @@
+
+/*
+.template_gridtable .row .col {
+    padding:0px;
+}
+*/
+
+
+.tooltip-content .template_gridtable .row {
+    margin-bottom:4px;
+}
+.tooltip-content .template_gridtable .row .col {
+    padding:0px;
+}
+
+.template_gridtable .row .col {
+
+}
+
+.template_gridtable .row .template_gridtable .row {
+    margin-bottom:0px;
+}
+
+/*
+.template_gridtable .col .row {
+    margin-left:auto;
+}*/
+
+.template_gridtable .row {
+
+}
+
+
+.template_gridtable .row {
+    margin-bottom:0px;
+}
+
+

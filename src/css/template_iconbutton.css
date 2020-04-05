@@ -1,0 +1,45 @@
+.template_iconbutton {
+    display: inline-flex;
+    position: relative;
+    box-sizing: border-box;
+    border: none;
+    vertical-align: middle;
+    text-align: center;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    background-color: transparent;
+    color: #333;
+    box-shadow: none;
+    font-family: var(--pure-material-font, "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system) !important;
+    font-weight: 500;
+    line-height: 36px;
+    overflow: hidden;
+    outline: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 48px;
+    height: 48px;
+    padding: 12px;
+    border-radius: 50%;
+    min-width: auto;
+    transition: box-shadow 0.2s, background-color .2s ease-out;
+}
+
+.template_iconbutton:hover {
+    font-size: 24px;
+    font-weight: 500;
+    color: #333;
+    background-color: rgba(0,0,0,0.12);
+}
+
+
+.td a.template_iconbutton, .td a.template_iconbutton:hover {
+    color: #333;
+}

@@ -1,0 +1,39 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 27.02.2020, 09:55:12
+    Author     : Stephan Kimmich
+*/
+
+.template_sorts {
+    user-select: none;
+}
+
+.template_sorts .sort.sort-toggle {
+    display: inline-flex !important;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.template_sorts .sort i {
+    height: 10px !important;
+    line-height: 10px;
+    opacity: 0.5;
+}
+
+.sort.sort-toggle[data-sort='asc'] i.sort-asc {
+    opacity: 1;
+    color: #407ab3;
+}
+
+.sort.sort-toggle[data-sort='desc'] i.sort-desc {
+    opacity: 1;
+    color: #407ab3;
+}
+
+.drow.opened .template_sorts {
+    display: none;
+}

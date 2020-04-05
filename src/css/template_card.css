@@ -1,0 +1,98 @@
+
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateX(20px);
+        transform: translateX(20px);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateX(20px);
+        -ms-transform: translateX(20px);
+        transform: translateX(20px);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+.fadeInRight {
+    -webkit-animation-name: fadeInRight;
+    animation-name: fadeInRight;
+}
+
+
+
+.template_card {
+    opacity: 0;
+
+    font: 400 13px "Open Sans",sans-serif;
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .12), 0 1px 5px 0 rgba(0, 0, 0, .2);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .12), 0 1px 5px 0 rgba(0, 0, 0, .2);
+    -webkit-transition: -webkit-box-shadow .25s;
+    -moz-transition:         box-shadow .25s;
+    -o-transition:         box-shadow .25s;
+    transition: -webkit-box-shadow .25s;
+    transition:         box-shadow .25s;
+    transition:         box-shadow .25s, -webkit-box-shadow .25s;
+
+    border-radius: 2px;
+    background-color: #fff;
+    padding:16px;
+    border-radius: 6px !important;
+   /* min-height:calc(100vh - 72px - 34px - 56px - 80px - 2px);*/
+        margin: 16px 0;
+}
+
+.template_card:first-child {
+    margin-top:0px;
+}
+
+.template_card .title {
+    line-height: 32px;
+    display: block;
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+
+
+
+
+
+
+
+.template_card .template_textinput input, #crm_body .template_card .template_textinput input,
+.template_card .template_textarea textarea, #crm_body .template_card .template_textarea textarea,
+#crm_body .template_card .template_datuminput input[type="text"],
+#crm_body .template_card .template_zeitinput input[type="text"],
+.template_card .template_checkinput span:not(.template_text):before,
+.template_card .template_checkinput span:not(.template_text):after,
+.template_fileinput {
+    background:rgba(227,225,226,0.4);
+}
+
+
+
+.template_card .template_gridtable .row .col .template_button, .template_card .template_gridtable .row .col .template_submit {
+    margin-top:12px;
+}

@@ -1,0 +1,37 @@
+.link-list {
+    padding: 8px 0;
+    min-width: 112px;
+}
+
+.link-list .template_gridtable .row {
+    margin-bottom: 0;
+}
+
+.link-list .template_gridtable .col {
+    padding: 0;
+}
+
+.link-list a {
+    color: rgba(0, 0, 0, 0.87);
+    height: 48px;
+    padding: 0 16px;
+    display: flex;
+    position: relative;
+    align-items: center;
+    font-size: 14px;
+    font-weight: normal;
+    user-select: none;
+}
+
+.link-list a:hover {
+    background: #f5f5f5;
+}
+
+.link-list .divider {
+    height: 0;
+    margin: 0;
+    border: none;
+    border-bottom-color: rgba(0, 0, 0, 0.12);
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}

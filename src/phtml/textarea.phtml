@@ -1,0 +1,16 @@
+<div 
+    class="<?= $this->wrapper_class ?>" 
+    data-on-document-ready="
+    <?= $this->wrapper_class ?>_focusEffect,
+   <?= ($this->required?$this->wrapper_class.'_required,':'') ?>
+   <?= $this->wrapper_class ?>_autosize
+    " 
+    >
+    <textarea 
+           class="<?= $this->class ?>" 
+           placeholder="<?= $this->placeholder ?>" 
+           name="<?= $this->name ?>" 
+           <?= $this->customAttr ?> 
+           ><?= $this->value; ?></textarea>
+    <label class="active"><?= $this->label ?><?= ($this->required==true?' *':'') ?></label>
+</div>

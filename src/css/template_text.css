@@ -1,0 +1,10 @@
+.template_text.truncate > span:first-child {
+    display:none;
+}
+
+.drow.opened .template_text.truncate > span:first-child {
+    display:inline;
+}
+.drow.opened .template_text.truncate .truncated_text {
+    display:none;
+}

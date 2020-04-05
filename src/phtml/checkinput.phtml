@@ -1,0 +1,15 @@
+<span 
+    class="<?= $this->wrapper_class ?>" 
+    data-on-document-ready=""
+    >
+    <label>
+        <input class="<?= $this->class ?>" type="checkbox" name="<?= $this->name ?>" <?= $this->customAttr ?> <?= ($this->checked?' checked="checked"':'') ?>>
+        <span></span>
+    </label>
+    <label class="active label">
+        <? foreach ($this->getElements() as $obj) { ?>
+        <?= $obj->getHtml(); ?>
+        <? } ?>
+        <?= ($this->required==true?' *':'') ?>
+    </label>
+</span>

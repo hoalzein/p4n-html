@@ -1,0 +1,118 @@
+
+<div 
+    class="<?= $this->class ?>" 
+    data-on-document-ready="
+        tableSearch
+        <?=((count($this->filter)>0)?',tableFilter':'')?>
+        <?=($this->sortable?',tableSortable':'')?>
+        ,frozeHead
+    "   
+    <?= $this->customAttr ?>
+>
+
+    <div class="section">
+        <? if (count($this->filter)>0) { ?>
+        <div class="section-left">
+            <div id="filter_<?= $this->name ?>" class="filter-list">
+                <span class="title"><?= _FILTER_ ?></span>
+                <ul>
+                    <? foreach ($this->filter as $filter) { ?>
+                        <li>
+                            <?= $filter->getHtml() ?>
+                        </li>
+                    <? } ?>
+                </ul>
+            </div>
+            <div class="filter-overlay"></div>
+        </div>
+        <? } ?>
+        
+        <div class="section-right<?=(count($this->filter)>0?'':' ohne_filter')?>">
+            <div class="dtable-header">
+                
+                <? if (($this->search && $this->search_tooltip) || count($this->filter)>0) { ?>
+                    <div class="table-search <?=($this->search?' search':'')?><?=(count($this->filter)>0?' filter':'')?>">
+                        <? if (count($this->filter)>0) { ?>
+                        <a href="#" class="filter-trigger" data-on-document-ready="tableFilterTrigger"><i class="material-icons">filter_list</i></a>
+                        <? } ?>
+                        <? if ($this->search) { ?>
+                       <!-- <i class="material-icons search-icon">search</i> -->
+                        <?= ($this->search_tooltip?$this->search_tooltip->getHtml():'') ?>
+                        <input type="text" placeholder="<?= _SUCHE_ ?>" >
+                          <? } ?>
+                    </div>
+              <? } ?>
+            </div>
+
+
+            <div id="table_<?= $this->name ?>" class="dtable-wrapper<?= ((($this->search && $this->search_tooltip) || count($this->filter)>0)?'':' ohne_suche') ?>" data-on-document-ready="tableSort,tableWidthInit,tableContentExpandInit">
+                <table class="table-ignore2 dtable <?= ($this->bordered ? 'bordered ' : '') ?><?= ($this->hover ? 'hover ' : '') ?>">
+               
+                        <tr class="drow drow-header hide-on-medium-and-down<?=($this->sortable?' notsortable':'')?>">    
+                            <td class="drow2 collapsed-more collapsed_trigger">
+                                <div class="dcol th">
+                                    <a href="javascript:void(0);"></a>
+                                </div>
+                            </td>
+                            
+                            <? if ($this->sortable) { ?>
+                            <td class="drow2 sortable collapsed-more">
+                                <div class="dcol th">
+                                    <a href="javascript:void(0);"></a>
+                                </div>
+                            </td>   
+                            <? } ?>
+                            <? 
+                            foreach ($this->getElements()[0]->getElements() as $col) { ?>
+                                <td class="drow2 <?= ($col->priority>0?'mit_priority':'') ?> <?= ($col->textAlign!==''?'text-'.strtolower($col->textAlign):'') ?>" data-name="<?= $col->name ?>"  data-priority="<?= $col->priority ?>">
+
+                                <div class="dcol th">
+                                    <? foreach ($col->getElements() as $bez => $obj) { ?>
+                                            <?= $obj->getHtml() ?>
+                                    <? } ?>
+                                </div>
+                                </td>
+                            <? } ?>
+                        </tr>
+
+                        <? foreach ($this->getElements() as $i => $row) { ?>
+                            <? if ($i==0) { continue; } ?>
+                            <tr class="drow" data-row-zaehler="<?= $i ?>" <?=$row->customAttr?>>
+                                <td class="drow2 collapsed-more hide-on-medium-and-down collapsed_trigger">
+                                    <div class="dcol">
+                                        <?php
+                                        $iconButton = new Template_IconButton();
+                                        $iconButton->setIconName('add_circle_outline');
+                                        $iconButton->addCustomClass('content_expand');
+                                        echo $iconButton->getHtml()
+                                        ?>
+                                    </div>
+                                </td>
+                                <? if ($this->sortable) { ?>
+                                <td class="drow2 collapsed-more hide-on-medium-and-down">
+                                    <div class="dcol">
+                                        <?php
+                                        $iconButton = new Template_IconButton();
+                                        $iconButton->setIconName('swap_vert');
+                                        $iconButton->addCustomClass('sortable_move');
+                                        echo $iconButton->getHtml();
+                                        ?>
+                                    </div>
+                                </td>
+                                <? } ?>
+                                <? foreach ($row->getElements() as $z => $col) { ?>
+                                    <td class="drow2" data-name="<?= $col->name ?>">
+                                            <div class="hide-on-large-and-up dcol th"><?= $this->getElements()[0]->getElements()[$z]->getElements()[0]->getHtml() ?></div>
+                                            <div class="dcol td"><? foreach ($col->getElements() as $obj) { ?><?= $obj->getHtml() ?><? } ?></div>
+                                   </td>
+                                <? } ?>
+                             </tr>
+                        <? } ?>
+                </table>
+                 <? if ($this->sortable) { ?>
+                    <div class="sortable_href" data-href="<?= $this->sortable ?>" ></div>
+                <? } ?>
+            </div> 
+        </div>
+    </div>
+</div>

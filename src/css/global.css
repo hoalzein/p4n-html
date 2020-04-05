@@ -1,0 +1,54 @@
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.page-overlay {
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    overflow-x: hidden;
+    overflow-y: auto;
+    outline: 0;
+    opacity: 0;
+    background: rgba(255,255,255,0.5);
+    padding: 16px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-overlay.show {
+    z-index: 1050;
+    visibility: visible;
+    overflow-x: hidden;
+    overflow-y: auto;
+    opacity: 1;
+    transition: opacity 0.15s ease-in-out;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+body.no-scroll
+{
+    padding-right: 17px;
+}
+
+body.no-scroll div[name="menu"] {
+    padding-right: 25px;
+}
+
+

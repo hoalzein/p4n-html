@@ -1,0 +1,9 @@
+<a 
+    class="<?= $this->class ?>"
+    data-on-document-ready="requestResponseToContent"
+    <?= $this->customAttr ?>
+>
+<? foreach ($this->getElements() as $ele ) { ?>
+    <?= $ele->getHtml(); ?>
+<? } ?>
+</a>

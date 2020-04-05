@@ -1,0 +1,5 @@
+<div class="link-list <?= $this->class ?>" <?= $this->customAttr ?>>
+    <? foreach ($this->getElements() as $ele ) { ?>
+        <?= $ele->getHtml(); ?>
+    <? } ?>
+</div>

@@ -1,0 +1,17 @@
+<div 
+    class="<?= $this->wrapper_class ?>" 
+    data-on-document-ready="<?= $this->wrapper_class ?>_focusEffect<?= ($this->required?','.$this->wrapper_class.'_required':'') ?>">
+    <input class="<?= $this->class ?>"
+           type="text" 
+           value="<?= $this->value; ?>" 
+           placeholder="<?= $this->placeholder ?>" 
+           name="<?= $this->name ?>" 
+           <?= $this->customAttr ?> 
+    >
+    <label class="active">
+        <? foreach ($this->getElements() as $obj) { ?>
+            <?= $obj->getHtml(); ?>
+        <? } ?>
+        <?= ($this->required==true?' *':'') ?>
+    </label>
+</div>
