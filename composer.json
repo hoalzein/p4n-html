@@ -15,5 +15,12 @@
         "psr-4": {
             "hoalzein\\Prof4Net\\Html\\": "src/"
         }
+    },
+	"extra": {
+    "laravel": {
+        "providers": [
+            "hoalzein\\Prof4Net\\HtmlServiceProvider"
+        ]
     }
+}
 }
