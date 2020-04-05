@@ -16,7 +16,7 @@ class Template {
         if (defined('DIR_TO_ROOT')) {
             $file = DIR_TO_ROOT . '/' . $this->tplName . '.phtml';
         } else {
-            $file = base_path('package/p4n-html/src/phtml') . $this->tplName . '.phtml';
+            $file = base_path('vendor/hoalzein/p4n-html/src/phtml') . $this->tplName . '.phtml';
         }
         if (!file_exists($file)) {
             return '';
