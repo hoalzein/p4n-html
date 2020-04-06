@@ -5,6 +5,45 @@ p4n-html
 A laravel wrapper for Prof4Net html elements.
 
 
-### Installation for Laravel 6+
+### 1. Installation for Laravel 6+
+Run this at the command line:
 
-Run `composer require hoalzein/p4n-html`
+```bash
+composer require hoalzein/p4n-html
+```
+
+This will update `composer.json` and install the package into the `vendor/` directory.
+
+### 2. Usage
+To use the html elements simply follow the provided examples:
+
+```php
+<?php
+
+// P4NHTML class
+$p4nhtml = new hoalzein\Prof4Net\Html\P4NHtml;
+
+// Button
+$button = $p4nhtml->Button('Login', 'login.php');
+echo $button;
+
+// Icon Button
+$p4nhtml = new hoalzein\Prof4Net\Html\P4NHtml;
+$icon_button = $p4nhtml->IconButton('', 'logout.php', 'power_settings_new');
+echo $icon_button;
+```
+
+### 3. Generating a configuration file
+
+An optional configuration file can be published to customize package settings.
+
+First initialise the config file by running this command:
+
+```bash
+php artisan vendor:publish
+```
+
+Then select the index referring to  `p4n-html` to generate the config file at `config/breadcrumbs.php`
+The current possible settings are:
+
+- `'paths' => ['source' => base_path('vendor')]`
