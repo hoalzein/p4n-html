@@ -22,6 +22,10 @@ abstract class Elements extends Template {
     static $last = null;
 
     public function __construct($name = '', $object = null, $prevAttributeString = '') {
+
+        if (!defined('DIR_TO_ROOT')) {
+            include_once(base_path('vendor/hoalzein/p4n-html/src/output.php'));
+        }
         parent::__construct();
 
         if (isset($this->wrapper_class)) {
