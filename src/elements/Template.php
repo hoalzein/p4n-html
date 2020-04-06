@@ -14,7 +14,7 @@ class Template {
 
     private function getTpl() {
         if (defined('DIR_TO_ROOT')) {
-            $file = DIR_TO_ROOT . '/' . $this->tplName . '.phtml';
+            $file = DIR_TO_ROOT . '/p4n-html/src/phtml' . $this->tplName . '.phtml';
         } else {
             $file = base_path('vendor/hoalzein/p4n-html/src/phtml') . $this->tplName . '.phtml';
         }
@@ -41,6 +41,10 @@ class Template {
             }
         }
         return $this->getTpl();
+    }
+
+    public function Html() {
+        return $this->getHtml();
     }
 
 }
