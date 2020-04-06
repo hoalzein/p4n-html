@@ -25,11 +25,11 @@ $p4nhtml = new hoalzein\Prof4Net\Html\P4NHtml;
 
 // Button
 $button = $p4nhtml->Button('Login', 'login.php');
-echo $button;
+echo $button->html();
 
 // Icon Button
 $icon_button = $p4nhtml->IconButton('', 'logout.php', 'power_settings_new');
-echo $icon_button;
+echo $icon_button->html();
 ```
 
 ### 3. Generating a configuration file
