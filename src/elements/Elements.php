@@ -27,13 +27,11 @@ abstract class Elements extends Template {
             include_once(base_path('vendor/hoalzein/p4n-html/src/output.php'));
         }
         parent::__construct();
-
         if (isset($this->wrapper_class)) {
-            $this->wrapper_class = strtolower($this->phpClass);
+            $this->wrapper_class = strtolower(str_replace("\\", "_", str_replace(__NAMESPACE__, "Template", $this->phpClass)));
         } else {
-            $this->class = strtolower($this->phpClass);
+            $this->class = strtolower(str_replace("\\", "_", str_replace(__NAMESPACE__, "Template", $this->phpClass)));
         }
-
         if ($name != '') {
             $this->original_name = $name;
             $this->name = name2jsname($name);
