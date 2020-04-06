@@ -4,3 +4,8 @@ p4n-html
 [![GitHub license](https://img.shields.io/github/license/hoalzein/p4n-html.svg)](https://github.com/hoalzein/p4n-html/blob/master/LICENSE)
 
 A laravel wrapper for Prof4Net html elements.
+
+
+### Installation for Laravel 6+
+
+Run `composer require hoalzein/p4n-html`
