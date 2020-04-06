@@ -36,7 +36,7 @@ use hoalzein\Prof4Net\Html\Elements\TimePicker;
 use hoalzein\Prof4Net\Html\Elements\Tooltip;
 use hoalzein\Prof4Net\Html\Elements\ZeitInput;
 
-class Html {
+class P4NHtml {
 
     public function Breadcrumbs($objectList) {
         $breadcrumbs = new Breadcrumbs($objectList);

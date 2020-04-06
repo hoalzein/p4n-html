@@ -4,7 +4,7 @@ namespace hoalzein\Prof4Net\Html;
 
 use Illuminate\Support\ServiceProvider;
 
-class HtmlServiceProvider extends ServiceProvider {
+class P4NHtmlServiceProvider extends ServiceProvider {
 
     public function register() {
         $this->mergeConfigFrom(__DIR__ . '/config/p4n-html.php', 'p4n-html');
