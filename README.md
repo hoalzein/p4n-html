@@ -43,6 +43,7 @@ php artisan vendor:publish
 ```
 
 Then select the index referring to  `p4n-html` to generate the config file at `config/p4n-html.php`
+
 The current possible settings are:
 
 - `'paths' => ['source' => base_path('vendor')]`
