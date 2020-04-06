@@ -29,8 +29,7 @@ class GridTable extends Elements {
         if (is_array($arr)) {
             $row = new GridTableRow;
             foreach ($arr as $obj) {
-                if ($obj->phpClass == 'GridTableCol') {
-
+                if ($obj->phpClass == 'GridTableColumn') {
                     $col = $obj;
                 } else {
                     $col = new GridTableColumn;
