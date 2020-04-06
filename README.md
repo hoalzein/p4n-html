@@ -28,7 +28,6 @@ $button = $p4nhtml->Button('Login', 'login.php');
 echo $button;
 
 // Icon Button
-$p4nhtml = new hoalzein\Prof4Net\Html\P4NHtml;
 $icon_button = $p4nhtml->IconButton('', 'logout.php', 'power_settings_new');
 echo $icon_button;
 ```
@@ -43,7 +42,7 @@ First initialise the config file by running this command:
 php artisan vendor:publish
 ```
 
-Then select the index referring to  `p4n-html` to generate the config file at `config/breadcrumbs.php`
+Then select the index referring to  `p4n-html` to generate the config file at `config/p4n-html.php`
 The current possible settings are:
 
 - `'paths' => ['source' => base_path('vendor')]`
