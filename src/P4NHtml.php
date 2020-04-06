@@ -39,168 +39,135 @@ use hoalzein\Prof4Net\Html\Elements\ZeitInput;
 class P4NHtml {
 
     public function Breadcrumbs($objectList) {
-        $breadcrumbs = new Breadcrumbs($objectList);
-        return $breadcrumbs->getHtml();
+        return new Breadcrumbs($objectList);
     }
 
     public function Button($text = '', $href = 'javascript:void(0);', $bild = '', $abfrage = '', $other = '') {
-        $button = new Button($text, $href, $bild, $abfrage, $other);
-        return $button->getHtml();
+        return new Button($text, $href, $bild, $abfrage, $other);
     }
 
     public function Card($titel, $object = null) {
-        $card = new Card($titel, $object);
-        return $card->getHtml();
+        return new Card($titel, $object);
     }
 
     public function CheckInput($name, $label = '', $checked = false, $other = '', $value = '') {
-        $check_input = new CheckInput($name, $label, $checked, $other, $value);
-        return $check_input->getHtml();
+        return new CheckInput($name, $label, $checked, $other, $value);
     }
 
     public function DatePicker() {
-        $date_picker = new DatePicker();
-        return $date_picker->getHtml();
+        return new DatePicker();
     }
 
     public function DatumInput($label = '', $name = '', $value = '', $other = 'onBlur=" cdat(this); ti2(this);"', $ohnepo = false, $mitjs = false, $valsmcurrent = false, $onSelectCallback = null) {
-        $datum_input = new DatumInput($label, $name, $value, $other, $ohnepo, $mitjs, $valsmcurrent, $onSelectCallback);
-        return $datum_input->getHtml();
+        return new DatumInput($label, $name, $value, $other, $ohnepo, $mitjs, $valsmcurrent, $onSelectCallback);
     }
 
     public function Divider($name = '') {
-        $divider = new Divider($name);
-        return $divider->getHtml();
+        return new Divider($name);
     }
 
     public function FileInput($fileUploadId, $uploadErrorList = []) {
-        $file_input = new FileInput($fileUploadId, $uploadErrorList);
-        return $file_input->getHtml();
+        return new FileInput($fileUploadId, $uploadErrorList);
     }
 
     public function Form($name = 'leer', $action = '', $method = 'POST', $file = false, $other = '', $readonly = false, $mitaltwert = false, $keinjs = false, $object = null) {
-        $form = new Form($name, $action, $method, $file, $other, $readonly, $mitaltwert, $keinjs, $object);
-        return $form->getHtml();
+        return new Form($name, $action, $method, $file, $other, $readonly, $mitaltwert, $keinjs, $object);
     }
 
     public function GridTable($rows = array()) {
-        $grid_table = new GridTable($rows);
-        return $grid_table->getHtml();
+        return new GridTable($rows);
     }
 
     function GridTableColumn($s = 0, $m = 0, $l = 0, $obj = null) {
-        $grid_table_column = new GridTableColumn($s, $m, $l, $obj);
-        return $grid_table_column->getHtml();
+        return new GridTableColumn($s, $m, $l, $obj);
     }
 
     public function GridTableRow() {
-        $grid_table_row = new GridTableRow();
-        return $grid_table_row->getHtml();
+        return new GridTableRow();
     }
 
     public function HiddenInput($name = '', $value = false, $other = '', $nameals_id = false) {
-        $hidden_input = new HiddenInput($name, $value, $other, $nameals_id);
-        return $hidden_input->getHtml();
+        return new HiddenInput($name, $value, $other, $nameals_id);
     }
 
     public function Icon($name) {
-        $icon = new Icon($name);
-        return $icon->getHtml();
+        return new Icon($name);
     }
 
     public function IconButton($text = '', $href = 'javascript:void(0);', $bild = '', $abfrage = '', $other = '') {
-        $icon_button = new IconButton($text, $href, $bild, $abfrage, $other);
-        return $icon_button->getHtml();
+        return new IconButton($text, $href, $bild, $abfrage, $other);
     }
 
     public function InlineOverlay() {
-        $inline_overlay = new InlineOverlay();
-        return $inline_overlay->getHtml();
+        return new InlineOverlay();
     }
 
     public function Link($text = '', $href = 'javascript:void(0);', $bild = '', $abfrage = '', $other = '') {
-        $link = new Link($text, $href, $bild, $abfrage, $other);
-        return $link->getHtml();
+        return new Link($text, $href, $bild, $abfrage, $other);
     }
 
     public function LinkList($linkElementList = array()) {
-        $link_list = new LinkList($linkElementList);
-        return $link_list->getHtml();
+        return new LinkList($linkElementList);
     }
 
     public function ProgressBar($id) {
-        $progress_bar = new ProgressBar($id);
-        return $progress_bar->getHtml();
+        return new ProgressBar($id);
     }
 
     public function RadioInput($name, $label = '', $value = '', $default = -99, $other = '', $trennung = '', $tr = false) {
-        $radio_input = new RadioInput($name, $label, $value, $default, $other, $trennung, $tr);
-        return $radio_input->getHtml();
+        return new RadioInput($name, $label, $value, $default, $other, $trennung, $tr);
     }
 
     public function SelectInput($label = '', $name = '', $inhaltfeld = array(), $default = -99, $bw = false, $other = '', $multiple = false, $multiple_rows = 5, $cache = array()) {
-        $select_input = new SelectInput($label, $name, $inhaltfeld, $default, $bw, $other, $multiple, $multiple_rows, $cache);
-        return $select_input->getHtml();
+        return new SelectInput($label, $name, $inhaltfeld, $default, $bw, $other, $multiple, $multiple_rows, $cache);
     }
 
     public function Submit($name, $value = 'submit', $other = '', $image = '', $bed = '', $bedother = '') {
-        $submit = new Submit($name, $value, $other, $image, $bed, $bedother);
-        return $submit->getHtml();
+        return new Submit($name, $value, $other, $image, $bed, $bedother);
     }
 
     public function Table($rows = array(), $options = array()) {
-        $table = new Table($rows, $options);
-        return $table->getHtml();
+        return new Table($rows, $options);
     }
 
     public function TableColumn($name = '') {
-        $table_column = new TableColumn($name);
-        return $table_column->getHtml();
+        return new TableColumn($name);
     }
 
     public function TableHeader($name) {
-        $table_header = new TableHeader($name);
-        return $table_header->getHtml();
+        return new TableHeader($name);
     }
 
     public function TableRow($key) {
-        $table_row = new TableRow($key);
-        return $table_row->getHtml();
+        return new TableRow($key);
     }
 
     public function Tabs() {
-        $tabs = new Tabs();
-        return $tabs->getHtml();
+        return new Tabs();
     }
 
     public function Text($text = '', $zeichen = -1) {
-        $text_element = new Text($text, $zeichen);
-        return $text_element->getHtml();
+        return new Text($text, $zeichen);
     }
 
     public function TextArea($name, $label = '', $value = '', $breite = 20, $hoehe = 3, $other = '') {
-        $text_area = new TextArea($name, $label, $value, $breite, $hoehe, $other);
-        return $text_area->getHtml();
+        return new TextArea($name, $label, $value, $breite, $hoehe, $other);
     }
 
     public function TextInput($label = '', $name = '', $value = '', $size = '', $other = '') {
-        $text_input = new TextInput($label, $name, $value, $size, $other);
-        return $text_input->getHtml();
+        return new TextInput($label, $name, $value, $size, $other);
     }
 
     public function TimePicker() {
-        $time_picker = new TimePicker();
-        return $time_picker->getHtml();
+        return new TimePicker();
     }
 
     public function Tooltip($text, $linktext = '', $link = '', $ueberschrift = '', $breite = 300, $extras = '', $keine_werte = false, $kein_bild = false, $tag = 'a') {
-        $tool_tip = new Tooltip($text, $linktext, $link, $ueberschrift, $breite, $extras, $keine_werte, $kein_bild, $tag);
-        return $tool_tip->getHtml();
+        return new Tooltip($text, $linktext, $link, $ueberschrift, $breite, $extras, $keine_werte, $kein_bild, $tag);
     }
 
     public function ZeitInput($label = '', $name = '', $value = '', $other = 'onBlur="ti2(this);"', $ohnepo = false, $mitjs = false, $valsmcurrent = false, $onSelectCallback = null) {
-        $zeit_input = new ZeitInput($label, $name, $value, $other, $ohnepo, $mitjs, $valsmcurrent, $onSelectCallback);
-        return $zeit_input->getHtml();
+        return new ZeitInput($label, $name, $value, $other, $ohnepo, $mitjs, $valsmcurrent, $onSelectCallback);
     }
 
 }
