@@ -39,11 +39,9 @@ An optional configuration file can be published to customize package settings.
 First initialise the config file by running this command:
 
 ```bash
-php artisan vendor:publish
+php artisan vendor:publish --provider="hoalzein\Prof4Net\Html\P4NHtmlServiceProvider" --tag="config"
 ```
 
-Then select the index referring to  `p4n-html` to generate the config file at `config/p4n-html.php`
-
-The current possible settings are:
+This will generate the config file at `config/p4n-html.php`. The current possible settings are:
 
 - `'paths' => ['source' => base_path('vendor')]`
