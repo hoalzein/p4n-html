@@ -34,14 +34,28 @@ echo $icon_button->html();
 
 ### 3. Generating a configuration file
 
+Confirm that this service provider entry `hoalzein\Prof4Net\Html\P4NHtmlServiceProvider::class` exists in `config/app.php`.
+
 An optional configuration file can be published to customize package settings.
 
-First initialise the config file by running this command:
+To publish the configuration file, simply run this command:
 
 ```bash
-php artisan vendor:publish --provider="hoalzein\Prof4Net\Html\P4NHtmlServiceProvider" --tag="config"
+php artisan vendor:publish --provider hoalzein\Prof4Net\Html\P4NHtmlServiceProvider --tag p4n-config
 ```
 
 This will generate the config file at `config/p4n-html.php`. The current possible settings are:
 
 - `'paths' => ['source' => base_path('vendor')]`
+
+### 4. Publishing assets to public directory
+
+Confirm that this service provider entry `hoalzein\Prof4Net\Html\P4NHtmlServiceProvider::class` exists in `config/app.php`.
+
+To publish package assets to your public directory, simply run this command:
+
+```bash
+php artisan vendor:publish --provider hoalzein\Prof4Net\Html\P4NHtmlServiceProvider --tag p4n-assets
+```
+
+This will copy all the assets to `public/prof4net`. 
