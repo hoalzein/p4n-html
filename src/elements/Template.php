@@ -43,7 +43,7 @@ class Template {
         return $this->getTpl();
     }
 
-    public function Html() {
+    public function html() {
         return $this->getHtml();
     }
 

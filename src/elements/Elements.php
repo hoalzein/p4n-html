@@ -11,6 +11,7 @@ abstract class Elements extends Template {
 
     use Helper;
 
+    public $id = '';
     public $class = '';
     public $customClass = '';
     public $name = '';

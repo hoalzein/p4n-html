@@ -1,5 +1,5 @@
 <form method="<?= $this->method ?>" action="<?= $this->action ?>" id="<?= $this->id ?>" class="<?= $this->class ?>" name="<?= $this->name ?>" <?= $this->customAttr ?> enctype='multipart/form-data'>
     <? foreach ($this->elements as $element) { ?>
-        <?= $element->getHtml(); ?>
+    <?= $element->getHtml(); ?>
     <? } ?>
 </form>
