@@ -34,6 +34,7 @@ echo $icon_button->html();
 Using the P4NHTML facade, which is auto-discovered:
 
 ```bash
+// Breadcrumbs
 $home = P4NHTML::Link('Home', 'index.php');
 
 echo P4NHTML::Breadcrumbs([$home, P4NHTML::Link('Users', 'users.php'), P4NHTML::Text('User')])->html();
