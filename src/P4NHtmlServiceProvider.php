@@ -8,6 +8,9 @@ class P4NHtmlServiceProvider extends ServiceProvider {
 
     public function register() {
         $this->mergeConfigFrom(__DIR__ . '/config/p4n-html.php', 'p4n-html');
+        $this->app->bind('p4n-html', function() {
+            return new P4NHtml;
+        });
     }
 
     public function boot() {

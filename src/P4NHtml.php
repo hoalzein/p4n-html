@@ -42,6 +42,38 @@ class P4NHtml {
         return new Breadcrumbs($objectList);
     }
 
+    public function RequestBreadcrumbs() {
+        $request = request();
+        $current_route = $request->route()->getName();
+        $home = $this->Link(trans('app.home'), route('home'));
+        switch ($current_route) {
+            case 'home':
+                return $this->Breadcrumbs([$home]);
+            case 'show-events':
+                return $this->Breadcrumbs([$home, $this->Text(trans('app.events'))]);
+            case 'show-event':
+                return $this->Breadcrumbs([$home, $this->Link(trans('app.events'), route('show-events')), $this->Text($request->event->description)]);
+            case 'scan-event':
+                return $this->Breadcrumbs([$home, $this->Link(trans('app.events'), route('show-events')), $this->Link($request->event->description, route('show-event', $request->event)), $this->Text(trans('app.checkIn'))]);
+            case 'show-users':
+                return $this->Breadcrumbs([$home, $this->Text(trans('app.users'))]);
+            case 'edit-user':
+                return $this->Breadcrumbs([$home, $this->Link(trans('app.users'), route('show-users')), $this->Text($request->user->name), $this->Text(trans('app.updateRoles'))]);
+            case 'show-tokens':
+                return $this->Breadcrumbs([$home, $this->Text(trans('app.tokens'))]);
+            case 'add-token':
+                return $this->Breadcrumbs([$home, $this->Link(trans('app.tokens'), route('show-tokens')), $this->Text(trans('app.create'))]);
+            case 'show-corporates':
+                return $this->Breadcrumbs([$home, $this->Text(trans('app.corporates'))]);
+            case 'add-corporate':
+                return $this->Breadcrumbs([$home, $this->Link(trans('app.corporates'), route('show-corporates')), $this->Text(trans('app.create'))]);
+            case 'edit-corporate':
+                return $this->Breadcrumbs([$home, $this->Link(trans('app.corporates'), route('show-corporates')), $this->Text($request->corporate->name), $this->Text(trans('app.edit'))]);
+            default:
+                return $this->Breadcrumbs([]);
+        }
+    }
+
     public function Button($text = '', $href = 'javascript:void(0);', $bild = '', $abfrage = '', $other = '') {
         return new Button($text, $href, $bild, $abfrage, $other);
     }
