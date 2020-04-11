@@ -31,6 +31,13 @@ echo $button->html();
 $icon_button = $p4nhtml->IconButton('', 'logout.php', 'power_settings_new');
 echo $icon_button->html();
 ```
+Using the P4NHTML facade, which is auto-discovered:
+
+```bash
+$home = P4NHTML::Link('Home', 'index.php');
+
+echo P4NHTML::Breadcrumbs([$home, P4NHTML::Link('Users', 'users.php'), P4NHTML::Text('User')])->html();
+```
 
 ### 3. Generating a configuration file
 
