@@ -8,6 +8,8 @@ use hoalzein\Prof4Net\Html\Elements\TableColumn;
 use hoalzein\Prof4Net\Html\Elements\TableHeader;
 use hoalzein\Prof4Net\Html\Elements\GridTable;
 use hoalzein\Prof4Net\Html\Elements\Sorts;
+use hoalzein\Prof4Net\Html\Elements\Icon;
+use hoalzein\Prof4Net\Html\Elements\Tooltip;
 
 class Table extends Elements {
 
@@ -66,7 +68,7 @@ class Table extends Elements {
      * @param textAlign | LEFT, CENTER, RIGHT
      */
 
-    public function addRow($arr = array(), $key) {
+    public function addRow($key, $arr = array()) {
 
         if (is_array($arr)) {
             $row = new TableRow($key);
@@ -98,7 +100,7 @@ class Table extends Elements {
     public function addRows($arr = array()) {
         if (is_array($arr)) {
             foreach ($arr as $key => $a) {
-                $this->addRow($a, $key);
+                $this->addRow($key,$a);
             }
         }
     }
@@ -165,22 +167,24 @@ class Table extends Elements {
 
     private function filterInit() {
         foreach ($this->filter as $arr) {
-            if ($arr->phpClass == 'Template_SelectInput') {
-                $options = array(-1 => _KEINE_AUSWAHL_);
-                foreach ($this->getElements() as $i => $row) {
-                    if ($i == 0) {
-                        continue;
-                    }
-                    foreach ($row->getElements() as $col) {
-                        $searchable_elements = $this->findFilterElements($col);
-                        foreach ($searchable_elements as $sobj) {
-                            if ($col->name == name2jsname($arr->name)) {
-                                $options[$sobj->original_text] = $sobj->original_text;
+            if (is_object($arr)) {
+                if ($arr->phpClass == 'hoalzein\Prof4Net\Html\Elements\SelectInput') {
+                    $options = array(-1 => "No Selection");
+                    foreach ($this->getElements() as $i => $row) {
+                        if ($i == 0) {
+                            continue;
+                        }
+                        foreach ($row->getElements() as $col) {
+                            $searchable_elements = $this->findFilterElements($col);
+                            foreach ($searchable_elements as $sobj) {
+                                if ($col->name == name2jsname($arr->name)) {
+                                    $options[$sobj->original_text] = $sobj->original_text;
+                                }
                             }
                         }
                     }
+                    $arr->setOptions($options);
                 }
-                $arr->setOptions($options);
             }
         }
     }
@@ -194,12 +198,13 @@ class Table extends Elements {
                     $returnwert = array_merge($returnwert, $this->findSearchableElements($ele));
                 }
             }
-            if (count($object->tooltip) > 0) {
-                foreach ($object->tooltip as $ele) {
-                    $returnwert = array_merge($returnwert, $this->findSearchableElements($ele));
+            if (!is_null($object->tooltip)) {
+                if (count($object->tooltip) > 0) {
+                    foreach ($object->tooltip as $ele) {
+                        $returnwert = array_merge($returnwert, $this->findSearchableElements($ele));
+                    }
                 }
             }
-
             if ($object->searchable == true) {
                 $returnwert[] = $object;
             }
@@ -221,7 +226,7 @@ class Table extends Elements {
             }
         }
         if (count($search_tooltip) > 0) {
-            $this->search_tooltip = Template_Tooltip::init(new GridTable($search_tooltip), Template_Icon::init('search'))->addCustomClass('search-icon');
+            $this->search_tooltip = Tooltip::init(new GridTable($search_tooltip), Icon::init('search'))->addCustomClass('search-icon');
         }
     }
 

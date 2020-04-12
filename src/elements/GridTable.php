@@ -14,7 +14,7 @@ class GridTable extends Elements {
     public $title = '';
     public $table;
 
-    public function __construct($rows = array()) {
+    function __construct($rows = array()) {
         parent::__construct();
         if (count($rows) > 0) {
             $this->addRows($rows);
@@ -29,13 +29,13 @@ class GridTable extends Elements {
         if (is_array($arr)) {
             $row = new GridTableRow;
             foreach ($arr as $obj) {
-                if ($obj->phpClass == 'GridTableColumn') {
-                    $col = $obj;
-                } else {
-                    $col = new GridTableColumn;
+                $col = new GridTableColumn;
+                if (is_object($obj)) {
+                    if ($obj->phpClass == 'hoalzein\Prof4Net\Html\Elements\GridTableColumn') {
+                        $col = $obj;
+                    }
                 }
                 $this->addElements($col, $obj);
-
                 $row->addElement($col);
             }
             $this->addElement($row);

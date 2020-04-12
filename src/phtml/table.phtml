@@ -1,14 +1,5 @@
 
-<div 
-    class="<?= $this->class ?>" 
-    data-on-document-ready="
-        tableSearch
-        <?=((count($this->filter)>0)?',tableFilter':'')?>
-        <?=($this->sortable?',tableSortable':'')?>
-        ,frozeHead
-    "   
-    <?= $this->customAttr ?>
->
+<div class="<?= $this->class ?>" data-on-document-ready="tableSearch<?=((count($this->filter)>0)?',tableFilter':'')?><?=($this->sortable?',tableSortable':'')?>,frozeHead" <?= $this->customAttr ?>>
 
     <div class="section">
         <? if (count($this->filter)>0) { ?>
@@ -81,7 +72,7 @@
                                 <td class="drow2 collapsed-more hide-on-medium-and-down collapsed_trigger">
                                     <div class="dcol">
                                         <?php
-                                        $iconButton = new Template_IconButton();
+                                        $iconButton = new hoalzein\Prof4Net\Html\Elements\IconButton;
                                         $iconButton->setIconName('add_circle_outline');
                                         $iconButton->addCustomClass('content_expand');
                                         echo $iconButton->getHtml()
@@ -92,7 +83,7 @@
                                 <td class="drow2 collapsed-more hide-on-medium-and-down">
                                     <div class="dcol">
                                         <?php
-                                        $iconButton = new Template_IconButton();
+                                        $iconButton = new hoalzein\Prof4Net\Html\Elements\IconButton;
                                         $iconButton->setIconName('swap_vert');
                                         $iconButton->addCustomClass('sortable_move');
                                         echo $iconButton->getHtml();
