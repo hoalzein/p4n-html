@@ -1,0 +1,31 @@
+.inline-overlay-wrapper {
+    position: absolute;
+    z-index: 996; /* one below top menu */
+    transform: scale(0);
+    transition: opacity 0.03s linear, transform 0.12s cubic-bezier(0, 0, 0.2, 1), -webkit-transform 0.12s cubic-bezier(0, 0, 0.2, 1);
+    box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+    background-color: #fff;
+    border-radius: 4px;
+    overflow: auto;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Roboto, sans-serif;
+    min-width: 120px;
+    max-width: calc(100vw - 32px);
+    max-height: 300px;
+    overflow-x: hidden;
+}
+
+.inline-overlay-wrapper.open {
+    transform: scale(1);
+    transition: opacity 0.015s linear, scale 0s linear, transform 0.4s cubic-bezier(0, 0, 0.2, 1), -webkit-transform 0.4s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.inline-overlay-content {
+    display: none;
+}
+
+.inline-overlay-wrapper .inline-overlay-content {
+    display: block;
+}

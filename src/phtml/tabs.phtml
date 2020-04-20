@@ -1,0 +1,19 @@
+
+<div class="content-wrapper-before" style=""></div>
+<div class="<?= $this->class ?>"
+     data-on-document-ready="templateTabsInit"
+     >
+<div class="row">
+<div class="col s12">
+  <ul class="tabs">
+    <? foreach ($this->getElements() as $ele) { ?>
+      <li class="tab <?= ($this->fullWidth?'col m'.$this->lgrid[$this->count]:'') ?>"><?= $ele->getHtml(); ?></li>
+    <? } ?>
+    <li class="indicator"></li>
+  </ul>
+</div>
+<? foreach ($this->getElements() as $ele) { ?>
+    <div name="<?= $ele->href ?>" class="col s12 tab-content"></div>
+<? } ?>
+</div>
+</div>

@@ -1,0 +1,107 @@
+
+
+.template_textinput {
+    position:relative;
+    margin-top:12px;
+    margin-bottom: 12px;
+    display:inline-block;
+    width:100%;
+}
+
+
+
+.template_textinput label {
+    font-size:14px;
+    line-height:16px;
+    height:16px;
+    position:absolute;
+    top:0;
+    left:0;
+    cursor:text;
+    -webkit-transition:color .2s ease-out,-webkit-transform .2s ease-out;
+    transition:color .2s ease-out,-webkit-transform .2s ease-out;
+    transition:transform .2s ease-out,color .2s ease-out;
+    transition:transform .2s ease-out,color .2s ease-out,-webkit-transform .2s ease-out;
+    -webkit-transform:translateY(12px);
+    -ms-transform:translateY(12px);
+    transform:translateY(12px);
+    -webkit-transform-origin:0 100%;
+    -ms-transform-origin:0 100%;
+    transform-origin:0 100%;
+    text-align:initial;
+    color:#9e9e9e;
+
+}
+
+.template_textinput label * {
+    display:inline-block;
+    white-space: nowrap;
+}
+
+.template_textinput label i {
+    vertical-align: middle;
+}
+
+.template_textinput input, #crm_body .template_textinput input {
+    font-size:14px;
+    box-sizing:content-box;
+    width:100%;
+    height:40px;
+    padding:0;
+    -webkit-transition:box-shadow .3s,border .3s;
+    transition:box-shadow .3s,border .3s;
+    border:none;
+    border-bottom:1px solid #9e9e9e;
+    border-radius:0;
+    outline:0;
+    background-color:transparent;
+    box-shadow:none;
+    line-height: 40px;
+    overflow: visible;
+    margin:0px;
+    background:rgba(227,225,226,0.4);
+}
+
+
+
+
+.template_textinput input:disabled, #crm_body .template_textinput input:disabled {
+color: rgba(0,0,0,.42);
+border-bottom: 1px dotted rgba(0,0,0,.42);
+}
+
+.template_textinput label {
+    -webkit-transform:translateY(-14px) scale(.8);
+    -ms-transform:translateY(-14px) scale(.8);
+    transform:translateY(-14px) scale(.8);
+    -webkit-transform-origin:0 0;
+    -ms-transform-origin:0 0;
+    transform-origin:0 0;
+    color:#9e9e9e;
+}
+
+
+
+
+.template_textinput.focusEffect label {
+    color:#5286ba; 
+}
+
+.template_textinput.focusEffect input, #crm_body .template_textinput.focusEffect input {
+    border-bottom:1px solid #5286ba;
+}
+
+
+.template_textinput.required-invalid label {
+    color:red;
+}
+.template_textinput.required-invalid input,#crm_body .template_textinput.required-invalid input {
+    border-bottom:1px solid red;
+}
+
+
+.template_textinput .truncate {
+    overflow:hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

@@ -1,0 +1,81 @@
+
+.template_textarea {
+    position:relative;
+    margin-top:12px;
+    margin-bottom: 12px;
+        display:inline-block;
+    width:100%;
+    
+}
+
+.template_textarea label {
+    font-size:14px;
+    position:absolute;
+    top:0;
+    left:0;
+    cursor:text;
+    -webkit-transition:color .2s ease-out,-webkit-transform .2s ease-out;
+    transition:color .2s ease-out,-webkit-transform .2s ease-out;
+    transition:transform .2s ease-out,color .2s ease-out;
+    transition:transform .2s ease-out,color .2s ease-out,-webkit-transform .2s ease-out;
+    -webkit-transform:translateY(12px);
+    -ms-transform:translateY(12px);
+    transform:translateY(12px);
+    -webkit-transform-origin:0 100%;
+    -ms-transform-origin:0 100%;
+    transform-origin:0 100%;
+    text-align:initial;
+    color:#9e9e9e;
+}
+
+.template_textarea textarea, #crm_body .template_textarea textarea {
+    font-size:14px;
+    box-sizing:content-box;
+    width:100%;
+    height:40px;
+    padding:0;
+    -webkit-transition:box-shadow .3s,border .3s;
+    transition:box-shadow .3s,border .3s;
+    border:none !important;
+    border-bottom:1px solid #9e9e9e !important;
+    border-radius:0;
+    outline:0;
+    background-color:transparent;
+    box-shadow:none;
+    line-height: 15px;
+    overflow: hidden;
+    margin:0px;
+    resize:none;
+    box-sizing: border-box;
+    padding-top:12px;
+    padding-bottom:12px;
+}
+
+.template_textarea label {
+    -webkit-transform:translateY(-14px) scale(.8);
+    -ms-transform:translateY(-14px) scale(.8);
+    transform:translateY(-14px) scale(.8);
+    -webkit-transform-origin:0 0;
+    -ms-transform-origin:0 0;
+    transform-origin:0 0;
+    color:#9e9e9e;
+}
+
+
+
+
+.template_textarea.focusEffect label {
+    color:#5286ba; 
+}
+
+.template_textarea.focusEffect textarea, #crm_body .template_textarea.focusEffect textarea {
+    border-bottom:1px solid #5286ba !important;
+}
+
+
+.template_textarea.required-invalid label {
+    color:red;
+}
+.template_textarea.required-invalid textarea,#crm_body .template_textarea.required-invalid textarea {
+    border-bottom:1px solid red !important;
+}
