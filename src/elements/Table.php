@@ -15,6 +15,7 @@ class Table extends Elements {
 
     public $search = true;
     public $bordered = true;
+    public $sortable = false;
     public $hover = true;
     public $filter = array();
     public $sort = array();
@@ -85,8 +86,12 @@ class Table extends Elements {
                 $this->addElements($col, $obj);
 
                 if (!is_string($name)) {
-                    $col->name = $this->names[$row->count];
-                    $col->original_name = $this->original_names[$row->count];
+                    if (!empty($this->names)) {
+                        $col->name = $this->names[$row->count];
+                        $col->original_name = $this->original_names[$row->count];
+                    }
+                    $col->original_name = $name;
+                    $col->name = name2jsname($name);
                 } else {
                     $col->original_name = $name;
                     $col->name = name2jsname($name);
@@ -100,7 +105,7 @@ class Table extends Elements {
     public function addRows($arr = array()) {
         if (is_array($arr)) {
             foreach ($arr as $key => $a) {
-                $this->addRow($key,$a);
+                $this->addRow($key, $a);
             }
         }
     }
@@ -198,15 +203,19 @@ class Table extends Elements {
                     $returnwert = array_merge($returnwert, $this->findSearchableElements($ele));
                 }
             }
-            if (!is_null($object->tooltip)) {
-                if (count($object->tooltip) > 0) {
-                    foreach ($object->tooltip as $ele) {
-                        $returnwert = array_merge($returnwert, $this->findSearchableElements($ele));
+            if (property_exists($object, 'tooltip')) {
+                if (!is_null($object->tooltip)) {
+                    if (count($object->tooltip) > 0) {
+                        foreach ($object->tooltip as $ele) {
+                            $returnwert = array_merge($returnwert, $this->findSearchableElements($ele));
+                        }
                     }
                 }
             }
-            if ($object->searchable == true) {
-                $returnwert[] = $object;
+            if (property_exists($object, 'searchable')) {
+                if ($object->searchable == true) {
+                    $returnwert[] = $object;
+                }
             }
         }
         return $returnwert;
@@ -262,9 +271,11 @@ class Table extends Elements {
     public function sortInit() {
         foreach ($this->getElements() as $row) {
             foreach ($row->getElements() as $col) {
-                if ($col->sort == true) {
-                    $sorts = new Sorts;
-                    $col->addElement($sorts);
+                if (property_exists($col, 'sort')) {
+                    if ($col->sort == true) {
+                        $sorts = new Sorts;
+                        $col->addElement($sorts);
+                    }
                 }
             }
         }
@@ -292,8 +303,9 @@ class Table extends Elements {
                 }
             }
         } else {
-            $this->responsivePriorityAdd(end($this->getElements()[0]->getElements())->name);
-            $this->responsivePriorityAdd(reset($this->getElements()[0]->getElements())->name);
+            $element = $this->getElements()[0]->getElements();
+            $this->responsivePriorityAdd(end($element)->name);
+            $this->responsivePriorityAdd(reset($element)->name);
             $this->responsivePriorityinit();
         }
     }

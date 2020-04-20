@@ -16,7 +16,7 @@ class Template {
         if (defined('DIR_TO_ROOT')) {
             $file = DIR_TO_ROOT . '/p4n-html/src/phtml' . $this->tplName . '.phtml';
         } else {
-            $file = base_path('vendor/hoalzein/p4n-html/src/phtml') . $this->tplName . '.phtml';
+            $file = str_replace("\\", "/", base_path('vendor/hoalzein/p4n-html/src/phtml') . $this->tplName . '.phtml');
         }
         if (!file_exists($file)) {
             return '';

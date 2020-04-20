@@ -36,7 +36,7 @@
             </div>
 
 
-            <div id="table_<?= $this->name ?>" class="dtable-wrapper<?= ((($this->search && $this->search_tooltip) || count($this->filter)>0)?'':' ohne_suche') ?>" data-on-document-ready="tableSort,tableWidthInit,tableContentExpandInit">
+            <div class="dtable-wrapper<?= ((($this->search && $this->search_tooltip) || count($this->filter)>0)?'':' ohne_suche') ?>" data-on-document-ready="tableSort,tableWidthInit,tableContentExpandInit">
                 <table class="table-ignore2 dtable <?= ($this->bordered ? 'bordered ' : '') ?><?= ($this->hover ? 'hover ' : '') ?>">
                
                         <tr class="drow drow-header hide-on-medium-and-down<?=($this->sortable?' notsortable':'')?>">    
@@ -55,7 +55,7 @@
                             <? } ?>
                             <? 
                             foreach ($this->getElements()[0]->getElements() as $col) { ?>
-                                <td class="drow2 <?= ($col->priority>0?'mit_priority':'') ?> <?= ($col->textAlign!==''?'text-'.strtolower($col->textAlign):'') ?>" data-name="<?= $col->name ?>"  data-priority="<?= $col->priority ?>">
+                                <td class="drow2" data-name="<?= $col->name ?>">
 
                                 <div class="dcol th">
                                     <? foreach ($col->getElements() as $bez => $obj) { ?>
