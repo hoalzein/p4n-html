@@ -30,6 +30,10 @@ echo $button->html();
 // Icon Button
 $icon_button = $p4nhtml->IconButton('', 'logout.php', 'power_settings_new');
 echo $icon_button->html();
+
+// Card
+$card = $p4nhtml->Card('Users', $p4nhtml->Table(array());
+echo $card->html();
 ```
 Using the P4NHTML facade, which is auto-discovered:
 
