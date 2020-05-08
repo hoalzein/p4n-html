@@ -1,17 +1,17 @@
 <div 
-    class="<?= $this->wrapper_class ?>" 
-    data-on-document-ready="templateSignatureInit<?= ($this->required?',templateSignaturRequired':'') ?>">
+    class="<?php echo $this->wrapper_class ?>" 
+    data-on-document-ready="templateSignatureInit<?php echo ($this->required ? ',templateSignaturRequired' : '') ?>">
     <div class="m-signature-pad">
-    <div class="m-signature-pad--body">
-        <canvas></canvas>
-        <input type="hidden" name="<?= $this->name ?>" class="sig_hidden" value="">
-    </div>
+        <div class="m-signature-pad--body">
+            <canvas></canvas>
+            <input type="hidden" name="<?php echo $this->name ?>" class="sig_hidden" value="">
+        </div>
     </div>
     <label class="active">
-        <? foreach ($this->getElements() as $obj) { ?>
-            <?= $obj->getHtml(); ?>
-        <? } ?>
-        <?= ($this->required==true?' *':'') ?>
+        <?php foreach ($this->getElements() as $obj) { ?>
+            <?php echo $obj->getHtml(); ?>
+        <?php } ?>
+        <?php echo ($this->required == true ? ' *' : '') ?>
         <div class="m-signature-pad-clear"><i class="material-icons">clear</i></div>
     </label>
 </div>

@@ -1,11 +1,11 @@
 <div 
-    class="<?= $this->class ?>" 
+    class="<?php echo $this->class ?>" 
     data-on-document-changed="template_tooltip_init"
-    <?= $this->customAttr ?>><? foreach ($this->getElements() as $obj) { ?><?= $obj->getHtml(); ?><? } ?>
+    <?php echo $this->customAttr ?>><?php foreach ($this->getElements() as $obj) { ?><?php echo $obj->getHtml(); ?><?php } ?>
     <div class="tooltip">
-    <div class="tooltip-content"><? foreach ($this->tooltip as $obj) { ?>
-        <?= $obj->getHtml(); ?>
-    <? } ?></div>
+        <div class="tooltip-content"><?php foreach ($this->tooltip as $obj) { ?>
+                <?php echo $obj->getHtml(); ?>
+            <?php } ?></div>
     </div>
 </div>
 

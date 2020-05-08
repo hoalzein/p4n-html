@@ -1,11 +1,5 @@
-<a 
-    class="<?= $this->class ?>" 
-    name="<?= $this->name ?>"
-    value="<?= $this->value ?>"
-    data-on-document-ready="formRequest"
-    <?= $this->customAttr ?>
->
-<? foreach ($this->getElements() as $ele ) { ?>
-    <?= $ele->getHtml(); ?>
-<? } ?>
+<a class="<?php echo $this->class ?>" name="<?php echo $this->name ?>" value="<?php echo $this->value ?>" data-on-document-ready="formRequest" <?php echo $this->customAttr ?>>
+    <?php foreach ($this->getElements() as $ele) { ?>
+        <?php echo $ele->getHtml(); ?>
+    <?php } ?>
 </a>
