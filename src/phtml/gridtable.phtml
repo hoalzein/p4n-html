@@ -1,17 +1,18 @@
-<div id="<?= $this->id ?>" class="<?= $this->class ?>" <?= $this->customAttr ?>>
-    <? foreach ($this->getElements() as $key => $row) { ?>
-    <div class="row"> 
-        <? foreach ($row->getElements() as $col) { 
-        $grid=$col->ownGrid();
-        ?>
-        <div class="<?= ($grid != '' ? $grid : 'col s12 m' . $this->mgrid[$row->count] . ' l' . $this->lgrid[$row->count]) ?>">
-            <? foreach ($col->getElements() as $bez => $obj) { ?>
-            <?= (is_object($obj) ? $obj->getHtml() : $obj) ?>
-            <? } ?>
+<div id="<?php echo $this->id ?>" class="<?php echo $this->class ?>" <?php echo $this->customAttr ?>>
+    <?php foreach ($this->getElements() as $key => $row) { ?>
+        <div class="row"> 
+            <?php
+            foreach ($row->getElements() as $col) {
+                $grid = $col->ownGrid();
+                ?>
+                <div class="<?php echo ($grid != '' ? $grid : 'col s12 m' . $this->mgrid[$row->count] . ' l' . $this->lgrid[$row->count]) ?>">
+                    <?php foreach ($col->getElements() as $bez => $obj) { ?>
+                        <?php echo (is_object($obj) ? $obj->getHtml() : $obj) ?>
+                <?php } ?>
+                </div>
+        <?php } ?> 
         </div>
-        <? } ?> 
-    </div>
-    <?
+        <?php
     }
     ?>
 </div>

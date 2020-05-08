@@ -1,17 +1,9 @@
-<div 
-    class="<?= $this->wrapper_class ?>" 
-    data-on-document-ready="<?= $this->wrapper_class ?>_focusEffect<?= ($this->required ? ',' . $this->wrapper_class . '_required' : '') ?>">
-    <input class="<?= $this->class ?>"
-           type="text" 
-           value="<?= $this->value; ?>" 
-           placeholder="<?= property_exists($this, 'placeholder') ? $this->placeholder : "" ?>" 
-           name="<?= $this->name ?>" 
-           <?= $this->customAttr ?> 
-           >
+<div class="<?php echo $this->wrapper_class ?>" data-on-document-ready="<?php echo $this->wrapper_class ?>_focusEffect<?php echo ($this->required ? ',' . $this->wrapper_class . '_required' : '') ?>">
+    <input class="<?php echo $this->class ?>" type="text"  value="<?php echo $this->value; ?>" placeholder="<?php echo property_exists($this, 'placeholder') ? $this->placeholder : "" ?>" name="<?php echo $this->name ?>" <?php echo $this->customAttr ?>>
     <label class="active">
-        <? foreach ($this->getElements() as $obj) { ?>
-        <?= $obj->getHtml(); ?>
-        <? } ?>
-        <?= ($this->required == true ? ' *' : '') ?>
+        <?php foreach ($this->getElements() as $obj) { ?>
+            <?php echo $obj->getHtml(); ?>
+        <?php } ?>
+        <?php echo ($this->required == true ? ' *' : '') ?>
     </label>
 </div>

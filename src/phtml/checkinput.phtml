@@ -1,12 +1,12 @@
-<span class="<?= $this->wrapper_class ?>" data-on-document-ready="">
+<span class="<?php echo $this->wrapper_class ?>" data-on-document-ready="">
     <label>
-        <input class="<?= $this->class ?>" type="checkbox" name="<?= $this->name ?>" <?= $this->customAttr ?> <?= ($this->checked ? ' checked="checked"' : '') ?>>
+        <input class="<?php echo $this->class ?>" type="checkbox" name="<?php echo $this->name ?>" <?php echo $this->customAttr ?> <?php echo ($this->checked ? ' checked="checked"' : '') ?>>
         <span></span>
     </label>
     <label class="active label">
-        <? foreach ($this->getElements() as $obj) { ?>
-        <?= $obj->getHtml(); ?>
-        <? } ?>
-        <?= ($this->required == true ? ' *' : '') ?>
+        <?php foreach ($this->getElements() as $obj) { ?>
+            <?php echo $obj->getHtml(); ?>
+        <?php } ?>
+        <?php echo ($this->required == true ? ' *' : '') ?>
     </label>
 </span>

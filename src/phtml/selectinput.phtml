@@ -1,15 +1,12 @@
-<span 
-    class="<?= $this->wrapper_class ?> styled-select" 
-    data-on-document-ready="select_js_all<?= property_exists($this, 'customEvent') ? $this->customEvent : "" ?>"
-    >
-    <select class="modern_select select-js select-js-all<?= $this->class ?>" name="<?= $this->name ?>"  <?= $this->customAttr ?>>
-        <? foreach ($this->options as $key => $value) { ?>
-        <option <?= (in_array($key, $this->selected) ? ' selected="selected"' : '') ?> value="<?= $key ?>"><?= $value ?></option>
-        <? } ?>
+<span class="<?php echo $this->wrapper_class ?> styled-select" data-on-document-ready="select_js_all<?php echo property_exists($this, 'customEvent') ? $this->customEvent : "" ?>">
+    <select class="modern_select select-js select-js-all<?php echo $this->class ?>" name="<?php echo $this->name ?>"  <?php echo $this->customAttr ?>>
+        <?php foreach ($this->options as $key => $value) { ?>
+            <option <?php echo (in_array($key, $this->selected) ? ' selected="selected"' : '') ?> value="<?php echo $key ?>"><?php echo $value ?></option>
+        <?php } ?>
     </select>
     <i class="material-icons">keyboard_arrow_down</i>
-    <label><? foreach ($this->getElements() as $obj) { ?>
-        <?= $obj->getHtml(); ?>
-        <? } ?>
-        <?= ($this->required == true ? ' *' : '') ?></label>
+    <label><?php foreach ($this->getElements() as $obj) { ?>
+            <?php echo $obj->getHtml(); ?>
+        <?php } ?>
+        <?php echo ($this->required == true ? ' *' : '') ?></label>
 </span>

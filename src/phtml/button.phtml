@@ -1,5 +1,7 @@
 <a class="<?= $this->class ?>" data-on-document-ready="requestResponseToContent" <?= $this->customAttr ?>>
-    <? foreach ($this->getElements() as $ele ) { ?>
-    <?= $ele->getHtml(); ?>
-    <? } ?>
+    <?php
+    foreach ($this->getElements() as $ele) {
+        echo $ele->getHtml();
+    }
+    ?>
 </a>

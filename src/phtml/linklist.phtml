@@ -1,5 +1,5 @@
-<div class="link-list <?= $this->class ?>" <?= $this->customAttr ?>>
-    <? foreach ($this->getElements() as $ele ) { ?>
-        <?= $ele->getHtml(); ?>
-    <? } ?>
+<div class="link-list <?php echo $this->class ?>" <?php echo $this->customAttr ?>>
+    <?php foreach ($this->getElements() as $ele) { ?>
+        <?php echo $ele->getHtml(); ?>
+    <?php } ?>
 </div>
