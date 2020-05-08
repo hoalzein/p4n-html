@@ -32,7 +32,9 @@ $icon_button = $p4nhtml->IconButton('', 'logout.php', 'power_settings_new');
 echo $icon_button->html();
 
 // Card
-$card = $p4nhtml->Card('Users', $p4nhtml->Table(array());
+$cells[0][0] = $p4nhtml->Text('Id');
+$cells[0][1] = $p4nhtml->Text('Name');
+$card = $p4nhtml->Card('Users', $p4nhtml->Table($cells);
 echo $card->html();
 ```
 Using the P4NHTML facade, which is auto-discovered:
